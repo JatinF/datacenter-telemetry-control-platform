@@ -23,6 +23,8 @@ Local pytest: 12 passed, coverage 94.26%. Ruff was clean. Mypy was clean on 15 s
 
 The table is `benchmarks/latest.json`. Loopback Redfish and Modbus are covered by pytest, not by this 100-device pass.
 
+GitHub Actions on `e6536221581d73a86a38affcd53bb2be430cf689`: ci run 43661422273 (test check 132651369921, docker-build check 132651369722) and security run 43661422257 (scan check 132651370016). Each annotation list was empty. A local Docker build was not run. The image proof is the docker-build check. ci run 43661203340 on `4dccbcc` failed because pytest called PowerShell on the Linux runner. That measurement file was not changed.
+
 ## Quick start
 
 ```powershell
@@ -46,7 +48,7 @@ python -m venv .venv
 - [ ] Docker Compose was not started on this workstation
 - [x] Architecture, protocols, and the runbook are in `docs/`
 
-PostgreSQL, Grafana, a Prometheus server, BACnet, SNMP, Kubernetes, and real equipment were not run. The Go collector and the C++ agent are separate programs. Their results belong in the measurement section only after they are run.
+PostgreSQL, Grafana, a Prometheus server, BACnet, SNMP, Kubernetes, and real equipment were not run. The Go collector test and the C++ agent compile are steps in the GitHub test job above. The C++ value is compiled in. It is not a sensor reading.
 
 ## License
 
