@@ -1,0 +1,6 @@
+# Not loaded. A Prometheus server was not started.
+scrape_configs:
+  - job_name: dc-telemetry
+    metrics_path: /metrics
+    static_configs:
+      - targets: ["127.0.0.1:8080"]

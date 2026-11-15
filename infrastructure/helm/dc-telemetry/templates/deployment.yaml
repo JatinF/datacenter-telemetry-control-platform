@@ -1,0 +1,28 @@
+# Unapplied. kubectl was not run.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dc-telemetry
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dc-telemetry
+  template:
+    metadata:
+      labels:
+        app: dc-telemetry
+    spec:
+      containers:
+        - name: api
+          image: datacenter-telemetry-control-platform:ci
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: /readyz
+              port: 8080
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080

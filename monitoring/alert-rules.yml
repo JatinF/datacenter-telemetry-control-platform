@@ -1,0 +1,10 @@
+groups:
+  - name: simulated-hall
+    rules:
+      - alert: AdapterErrors
+        expr: increase(dc_adapter_errors_total[5m]) > 0
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: The in-process collector counted adapter errors.

@@ -1,0 +1,36 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-go@v7
+        with:
+          go-version: "1.22"
+          cache: false
+      - run: python -m pip install -e ".[dev]"
+      - run: ruff check src tests scripts
+      - run: mypy
+      - run: python -m pytest
+      - run: go test ./...
+        working-directory: services/go-collector
+        env:
+          GOPROXY: "off"
+          GOTOOLCHAIN: local
+      - run: sudo apt-get update && sudo apt-get install -y g++
+      - run: g++ -std=c++17 -O2 -o "$RUNNER_TEMP/sensor-agent" services/cpp-sensor-agent/sensor_agent.cpp && "$RUNNER_TEMP/sensor-agent"
+
+  docker-build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - run: docker build -t datacenter-telemetry-control-platform:ci .
+      - run: docker compose config

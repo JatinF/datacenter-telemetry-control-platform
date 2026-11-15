@@ -1,0 +1,10 @@
+{
+  "title": "Simulated hall",
+  "uid": "syn-labhall",
+  "panels": [
+    {"title": "Readings", "targets": [{"expr": "dc_readings_total"}]},
+    {"title": "Adapter errors", "targets": [{"expr": "dc_adapter_errors_total"}]},
+    {"title": "Collect latency", "targets": [{"expr": "dc_collect_seconds_bucket"}]}
+  ],
+  "loaded": false
+}

@@ -1,0 +1,5 @@
+applied: false
+image: datacenter-telemetry-control-platform:ci
+replicaCount: 1
+service:
+  port: 8080

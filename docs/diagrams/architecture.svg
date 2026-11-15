@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="220" viewBox="0 0 880 220">
+  <rect width="880" height="220" fill="#f7f4ef"/>
+  <text x="24" y="32" font-family="Segoe UI, sans-serif" font-size="16" fill="#1c1917">Simulated hall SYN-SITE-LABHALL</text>
+  <rect x="24" y="52" width="160" height="64" rx="8" fill="#e7f0e4" stroke="#3f6212"/>
+  <text x="104" y="88" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#1c1917">Loopback Redfish</text>
+  <rect x="208" y="52" width="160" height="64" rx="8" fill="#e7f0e4" stroke="#3f6212"/>
+  <text x="288" y="88" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#1c1917">Loopback Modbus</text>
+  <rect x="392" y="52" width="180" height="64" rx="8" fill="#e7eef8" stroke="#1e3a8a"/>
+  <text x="482" y="88" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#1c1917">Normalized readings</text>
+  <rect x="596" y="52" width="180" height="64" rx="8" fill="#e7eef8" stroke="#1e3a8a"/>
+  <text x="686" y="88" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#1c1917">API and audit</text>
+  <rect x="24" y="140" width="752" height="52" rx="8" fill="#f3e8e8" stroke="#7f1d1d"/>
+  <text x="400" y="171" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#1c1917">Not contacted: real BMCs, BACnet, SNMP, PostgreSQL, Grafana, Kubernetes</text>
+</svg>
