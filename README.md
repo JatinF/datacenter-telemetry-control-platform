@@ -19,7 +19,7 @@ Per-device seconds: min 3.5999983083456755e-06, p50 7.800001185387373e-06, p95 1
 
 Hardware from the CIM query in that run: 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz, 4 cores, 8 logical processors, Python 3.12.10, Windows. Free physical memory was 7343608 KB of 32916868 KB.
 
-Local pytest: 11 passed, coverage 94.54%. Ruff was clean. Mypy was clean on 15 source files. `go test ./...` in `services/go-collector` passed. The C++ agent printed `SYN-SENS-CPP-0001` with `hardware` `not-contacted`. Price is none.
+Local pytest: 12 passed, coverage 94.26%. Ruff was clean. Mypy was clean on 15 source files. `go test ./...` in `services/go-collector` passed. The C++ agent printed `SYN-SENS-CPP-0001` with `hardware` `not-contacted`. Price is none.
 
 The table is `benchmarks/latest.json`. Loopback Redfish and Modbus are covered by pytest, not by this 100-device pass.
 

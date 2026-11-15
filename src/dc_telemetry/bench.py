@@ -75,12 +75,15 @@ def _hardware() -> dict[str, Any]:
         "Get-CimInstance Win32_OperatingSystem | "
         "Select-Object FreePhysicalMemory,TotalVisibleMemorySize | ConvertTo-Json -Compress"
     )
-    completed = subprocess.run(
-        ["powershell", "-NoProfile", "-Command", script],
-        capture_output=True,
-        text=True,
-        check=False,
-    )
+    try:
+        completed = subprocess.run(
+            ["powershell", "-NoProfile", "-Command", script],
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+    except FileNotFoundError:
+        return {"source": "unavailable"}
     lines = [line.strip() for line in completed.stdout.splitlines() if line.strip().startswith("{")]
     if len(lines) < 2:
         return {"source": "unavailable"}
